@@ -1,4 +1,4 @@
-package com.mousa.weatherapp
+package com.mousa.weatherapp.ui.launcer_activity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
