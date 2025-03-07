@@ -36,6 +36,7 @@ android {
 
 dependencies {
     implementation(project(":core"))
+
     //hilt
     implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
@@ -46,9 +47,11 @@ dependencies {
 
     //db
     implementation(libs.androidx.room.runtime)
+    implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
+    //test
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockk)
 }

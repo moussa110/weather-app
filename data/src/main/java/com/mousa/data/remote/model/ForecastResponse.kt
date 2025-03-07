@@ -4,11 +4,11 @@ package com.mousa.data.remote.model
 import com.google.gson.annotations.SerializedName
 
 data class ForecastResponse(
-    @SerializedName("cod") val cod: String,
-    @SerializedName("message") val message: Int,
-    @SerializedName("cnt") val cnt: Int,
-    @SerializedName("list") val forecastList: List<WeatherForecast>,
-    @SerializedName("city") val city: CityInfo
+    @SerializedName("cod") var cod: String="",
+    @SerializedName("message") var message: Int=0,
+    @SerializedName("cnt") var cnt: Int = 0,
+    @SerializedName("list") var forecastList: List<WeatherForecast> = listOf(),
+    @SerializedName("city") var city: CityInfo?=null
 )
 
 data class WeatherForecast(

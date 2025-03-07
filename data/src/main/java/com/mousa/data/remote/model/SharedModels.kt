@@ -43,12 +43,12 @@ data class SysInfo(
 )
 
 data class CityInfo(
-    @SerializedName("id") val id: Int,
-    @SerializedName("name") val name: String,
-    @SerializedName("coord") val coord: Coordinates,
-    @SerializedName("country") val country: String,
-    @SerializedName("population") val population: Int,
-    @SerializedName("timezone") val timezone: Int,
-    @SerializedName("sunrise") val sunrise: Long,
-    @SerializedName("sunset") val sunset: Long
+    @SerializedName("id") var id: Int = 0,
+    @SerializedName("name") var name: String = "",
+    @SerializedName("coord") var coord: Coordinates? = null,
+    @SerializedName("country") var country: String = "",
+    @SerializedName("population") var population: Int = 0,
+    @SerializedName("timezone") var timezone: Int = 0,
+    @SerializedName("sunrise") var sunrise: Long = 0,
+    @SerializedName("sunset") var sunset: Long = 0
 )
