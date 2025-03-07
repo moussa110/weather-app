@@ -18,6 +18,7 @@ mockk = "1.13.5"
 retrofit = "2.9.0"
 roomRuntime = "2.6.1"
 timber = "5.0.1"
+weatherhelpers = "1.1.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -47,6 +48,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 mockk = { module = "io.mockk:mockk", version.ref = "mockk" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
+weatherhelpers = { module = "com.mousa:weatherhelpers", version.ref = "weatherhelpers" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
