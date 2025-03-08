@@ -1,4 +1,4 @@
-package com.mousa.core.utils
+package com.mousa.core.domain.util
 
 sealed class Resource<out T> {
     data class Success<T>(val value: T) : Resource<T>()

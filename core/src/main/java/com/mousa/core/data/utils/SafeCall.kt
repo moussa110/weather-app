@@ -1,5 +1,7 @@
-package com.mousa.core.utils
+package com.mousa.core.data.utils
 
+import com.mousa.core.domain.util.NetworkError
+import com.mousa.core.domain.util.Resource
 import retrofit2.HttpException
 import retrofit2.Response
 import timber.log.Timber

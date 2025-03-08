@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
 }
@@ -35,12 +36,25 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
+    api(libs.androidx.core.ktx)
+    api(libs.androidx.lifecycle.runtime.ktx)
+
+    //compose
+    api(libs.androidx.activity.compose)
+    api(platform(libs.androidx.compose.bom))
+    api(libs.androidx.navigation.runtime.ktx)
+    api(libs.androidx.ui)
+    api(libs.androidx.ui.graphics)
+    api(libs.androidx.ui.tooling.preview)
+    api(libs.androidx.material3)
 
     //hilt
-    implementation(libs.hilt.android)
+    api(libs.hilt.android)
+    api(libs.androidx.hilt.navigation.compose)
     kapt(libs.hilt.android.compiler)
+
+    //coil
+    api(libs.coil.compose)
 
     //network
     implementation(libs.retrofit)
@@ -54,7 +68,8 @@ dependencies {
     testImplementation(libs.junit)
 
     //weather helpers
-    implementation(libs.weatherhelpers)
+    api(libs.weatherhelpers)
+
     testImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

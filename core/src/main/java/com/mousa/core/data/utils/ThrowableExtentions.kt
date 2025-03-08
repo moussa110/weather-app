@@ -1,6 +1,7 @@
-package com.mousa.core.utils
+package com.mousa.core.data.utils
 
 import com.google.gson.JsonParseException
+import com.mousa.core.domain.util.NetworkError
 import okio.IOException
 import retrofit2.HttpException
 import timber.log.Timber

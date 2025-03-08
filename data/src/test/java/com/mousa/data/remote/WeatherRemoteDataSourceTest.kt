@@ -1,7 +1,7 @@
 package com.mousa.data.remote
 
-import com.mousa.core.utils.NetworkError
-import com.mousa.core.utils.Resource
+import com.mousa.core.domain.util.NetworkError
+import com.mousa.core.domain.util.Resource
 import com.mousa.data.remote.model.CityInfo
 import com.mousa.data.remote.model.ForecastResponse
 import com.mousa.data.remote.model.WeatherResponse

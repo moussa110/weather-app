@@ -1,7 +1,7 @@
 package com.mousa.data.remote
 
-import com.mousa.core.utils.Resource
-import com.mousa.core.utils.safeApiCall
+import com.mousa.core.domain.util.Resource
+import com.mousa.core.data.utils.safeApiCall
 import com.mousa.data.remote.model.ForecastResponse
 import com.mousa.data.remote.model.WeatherResponse
 import javax.inject.Inject
@@ -17,6 +17,6 @@ class WeatherRemoteDataSource @Inject constructor(private val api: WeatherApi) {
     }
 
     companion object {
-        private const val API_KEY = "your_api_key_here"
+        private const val API_KEY = "00c2e49e1099aa6e1c154a6c7af271e0"
     }
 }

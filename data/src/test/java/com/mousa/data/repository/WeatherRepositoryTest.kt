@@ -1,6 +1,6 @@
 package com.mousa.data.repository
 
-import com.mousa.core.utils.Resource
+import com.mousa.core.domain.util.Resource
 import com.mousa.data.local.WeatherLocalDataSource
 import com.mousa.data.remote.WeatherRemoteDataSource
 import com.mousa.data.remote.model.CityInfo

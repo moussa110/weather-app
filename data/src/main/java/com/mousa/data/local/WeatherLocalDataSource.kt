@@ -1,7 +1,7 @@
 package com.mousa.data.local
 
-import com.mousa.core.utils.Resource
-import com.mousa.core.utils.safeCall
+import com.mousa.core.domain.util.Resource
+import com.mousa.core.data.utils.safeCall
 import javax.inject.Inject
 
 class WeatherLocalDataSource @Inject constructor(private val cityDao: CityDao) {
