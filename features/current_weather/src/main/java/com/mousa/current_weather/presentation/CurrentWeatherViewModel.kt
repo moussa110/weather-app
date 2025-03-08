@@ -22,12 +22,12 @@ class CurrentWeatherViewModel @Inject constructor(private val useCase: GetCurren
         MutableStateFlow(BaseState.Loading)
     val currentWeatherState = _currentWeatherState.asStateFlow()
 
-    fun fetchCurrentWeather(cityName: String) = viewModelScope.launch {
-        useCase.invoke(cityName)
-            .onEach {
-                _currentWeatherState.value = it
-            }.launchIn(viewModelScope)
+    fun fetchCurrentWeather(cityName: String) {
+        viewModelScope.launch {
+            useCase.invoke(cityName)
+                .onEach {
+                    _currentWeatherState.value = it
+                }.launchIn(viewModelScope)
+        }
     }
-
-
 }
