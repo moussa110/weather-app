@@ -38,7 +38,9 @@ dependencies {
     implementation(project(":core"))
     implementation(project(":data"))
     kapt(libs.hilt.android.compiler)
+
+    //test
     testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockk)
 }

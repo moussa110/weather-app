@@ -57,20 +57,19 @@ dependencies {
     api(libs.coil.compose)
 
     //network
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
-    implementation(libs.logging.interceptor)
+    api(libs.logging.interceptor)
+    api(libs.retrofit)
+    api(libs.converter.gson)
 
     //timber
     implementation(libs.timber)
 
-    //testing
-    testImplementation(libs.junit)
-
     //weather helpers
     api(libs.weatherhelpers)
 
+    //testing
+    testImplementation(libs.junit)
     testImplementation(libs.kotlinx.coroutines.test)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
+    testImplementation(libs.mockk)
+
 }
