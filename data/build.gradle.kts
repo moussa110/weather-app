@@ -38,20 +38,16 @@ dependencies {
     implementation(project(":core"))
 
     //hilt
-    implementation(libs.hilt.android)
     kapt(libs.hilt.android.compiler)
 
-    //network
-    implementation(libs.retrofit)
-    implementation(libs.converter.gson)
+    //test
+    testImplementation(libs.junit)
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockk)
 
     //db
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
     ksp(libs.androidx.room.compiler)
 
-    //test
-    testImplementation(libs.junit)
-    testImplementation(libs.kotlinx.coroutines.test)
-    testImplementation(libs.mockk)
 }
