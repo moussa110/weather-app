@@ -38,6 +38,9 @@ jobs:
           key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-${{ runner.os }}
 
+      - name: 📦 Publish Local Library (weatherhelpers) to MavenLocal
+        run: ./gradlew :core:publishToMavenLocal
+
       - name: Auto Format Code (ktlintFormat)
         run: ./gradlew ktlintFormat
 
