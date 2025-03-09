@@ -35,5 +35,5 @@ fun ForecastResponse.mapToDayWeatherList(): List<DayWeather> {
 }
 fun getDayNameFromPosition(position: Int): String {
     val today = LocalDate.now().plusDays(position.toLong())
-    return today.dayOfWeek.getDisplayName(java.time.format.TextStyle.SHORT, Locale.getDefault()) // ⬅️ استخراج اسم اليوم المختصر
+    return today.dayOfWeek.getDisplayName(java.time.format.TextStyle.SHORT, Locale.getDefault())
 }
