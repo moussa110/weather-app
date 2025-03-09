@@ -1,4 +1,4 @@
-package com.mousa.weatherapp.ui.launcer_activity
+package com.mousa.weatherapp.ui.launcheractivity
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -43,7 +43,6 @@ class MainActivity : ComponentActivity() {
                         is BaseState.Failure -> WeatherApp(cityName = null)
                         is BaseState.Success -> WeatherApp(cityName = it.data)
                     }
-
                 }
             }
         }
@@ -57,12 +56,15 @@ class MainActivity : ComponentActivity() {
     }
 
     @Composable
-    fun WeatherApp(modifier: Modifier = Modifier, cityName: String?) {
+    fun WeatherApp(
+        modifier: Modifier = Modifier,
+        cityName: String?,
+    ) {
         val navController = rememberNavController()
 
         NavHost(
             navController = navController,
-            startDestination = if (cityName == null) NavigationScreens.EnterCity.route else NavigationScreens.Weather.route
+            startDestination = if (cityName == null) NavigationScreens.EnterCity.route else NavigationScreens.Weather.route,
         ) {
             composable(NavigationScreens.EnterCity.route) {
                 EnterCityScreen(modifier, navController)
@@ -77,6 +79,4 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
-
 }
-

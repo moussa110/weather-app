@@ -1,0 +1,7 @@
+# .editorconfig
+root = true
+
+[*.{kt,kts}]
+insert_final_newline = false
+ktlint_standard_function-naming = disabled
+ktlint_standard_function-naming.ignore-composable-functions = true
