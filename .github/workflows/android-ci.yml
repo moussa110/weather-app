@@ -39,7 +39,7 @@ jobs:
           restore-keys: gradle-${{ runner.os }}
 
       - name: 📦 Publish Local Library (weatherhelpers) to MavenLocal
-        run: ./gradlew :core:publishToMavenLocal
+        run: ./gradlew :weatherhelpers:publishToMavenLocal
 
       - name: Auto Format Code (ktlintFormat)
         run: ./gradlew ktlintFormat
