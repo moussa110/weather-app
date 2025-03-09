@@ -38,6 +38,9 @@ jobs:
           key: gradle-${{ runner.os }}-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: gradle-${{ runner.os }}
 
+      - name: Auto Format Code (ktlintFormat)
+        run: ./gradlew ktlintFormat
+
       - name: Run Linter (ktlint)
         run: ./gradlew ktlintCheck
 
