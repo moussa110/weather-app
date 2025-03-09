@@ -94,7 +94,7 @@ fun SelectedCityData(
     ) {
         Icon(
             imageVector = Icons.Rounded.LocationOn,
-            tint = Color.Unspecified,
+            tint =  MaterialTheme.colorScheme.onBackground,
             contentDescription = null
         )
 

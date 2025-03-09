@@ -6,6 +6,8 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -21,7 +23,7 @@ import com.mousa.core.ui.navigation.NavigationScreens
 import com.mousa.core.utils.Constants.ARG_CITY_NAME
 import com.mousa.current_weather.presentation.CurrentWeatherScreen
 import com.mousa.forecast.presentation.screen.ForecastScreen
-import com.mousa.weatherapp.ui.theme.WeatherAppTheme
+import com.mousa.core.ui.theme.WeatherAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,18 +32,23 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             WeatherAppTheme {
-                val viewModel: MainViewModel = hiltViewModel()
-                val startDestination = viewModel.cityName.collectAsState()
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background
+                ) {
+                    val viewModel: MainViewModel = hiltViewModel()
+                    val startDestination = viewModel.cityName.collectAsState()
 
-                LaunchedEffect(true) {
-                    viewModel.loadStartDestination()
-                }
+                    LaunchedEffect(true) {
+                        viewModel.loadStartDestination()
+                    }
 
-                startDestination.value.let {
-                    when (it) {
-                        is BaseState.Loading -> Loading()
-                        is BaseState.Failure -> WeatherApp(cityName = null)
-                        is BaseState.Success -> WeatherApp(cityName = it.data)
+                    startDestination.value.let {
+                        when (it) {
+                            is BaseState.Loading -> Loading()
+                            is BaseState.Failure -> WeatherApp(cityName = null)
+                            is BaseState.Success -> WeatherApp(cityName = it.data)
+                        }
                     }
                 }
             }
